@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import BlogDetails from "./pages/BlogDetails";
+import Category from "./pages/Category";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import Footer from "./pages/Footer";
+import Navbar from "./components/Navbar";
+import QueryProvider from "./context/QueryProvider";
+import SearchResults from "./pages/SearchResults";
+import AdminArticlePage from "./pages/AdminArticlePage";  // New import
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryProvider>
+      <Router>
+        <div className="main-container">
+          <Navbar />
+          <div className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/articles/:id" element={<BlogDetails />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/category/:id" element={<Category />} />
+              <Route path="/search" element={<SearchResults />} />
+              <Route path="/admin/articles" element={<AdminArticlePage />} />  {/* New Route */}
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </Router>
+    </QueryProvider>
   );
 }
 

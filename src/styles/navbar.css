@@ -1,0 +1,326 @@
+/* Mobile-first Base Styles */
+
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-light {
+  background-color: #1f848f; /* Light mode background */
+  color: #fff;
+}
+
+.navbar-dark {
+  background-color: #333; /* Dark mode background */
+  color: #fff;
+}
+
+/* Navbar Brand (Logo, Extra, Hamburger) */
+.navbar-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: inherit;
+}
+
+/* Extra elements between logo and hamburger on mobile */
+.navbar-extra {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: inherit;
+}
+
+/* Hamburger Menu for Mobile */
+.navbar-burger {
+  display: flex;
+  background: none;
+  border: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35px;
+  width: 40px;
+  cursor: pointer;
+  z-index: 9999;
+  position: relative;
+  flex-shrink: 0;
+  min-width: 40px;
+}
+
+.navbar-burger span {
+  display: block;
+  height: 5px;
+  background-color: #fff;
+  width: 100%;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar-light .navbar-burger span {
+  background-color: #fff;
+}
+
+.navbar-dark .navbar-burger span {
+  background-color: #fff;
+}
+
+.navbar-burger span:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+/* Hamburger Animation when active */
+.navbar-burger.is-active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.navbar-burger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-burger.is-active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Mobile Menu Dropdown (for mobile, showing categories) */
+.navbar-menu {
+  position: absolute;
+  top: 100%; /* Position directly below the navbar */
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* Explicit background for mobile menu */
+.navbar-light .navbar-menu {
+  background-color: #1f848f;
+}
+
+.navbar-dark .navbar-menu {
+  background-color: #333;
+}
+
+.navbar-menu.is-active {
+  display: flex;
+}
+
+/* Navbar Items (Mobile) */
+.navbar-item {
+  color: inherit;
+  text-decoration: none;
+  padding: 10px 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* Mobile Search Form */
+.mobile-search-form {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.mobile-search-submit {
+  background: none;
+  border: none;
+  margin-left: 8px;
+  cursor: pointer;
+  color: inherit;
+  font-size: 20px;
+}
+
+.mobile-search-close {
+  background: none;
+  border: none;
+  margin-left: 8px;
+  cursor: pointer;
+  color: inherit;
+  font-size: 20px;
+}
+
+/* Desktop Dropdown (for "More" on desktop) */
+.navbar-item.has-dropdown {
+  position: relative;
+  width: auto;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: inherit;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.dropdown-toggle::after {
+  
+  font-size: 0.9rem;
+  margin-left: 4px;
+}
+
+/* Explicitly set dropdown background to match navbar */
+.navbar-light .dropdown-menu {
+  background-color: #1f848f;
+}
+
+.navbar-dark .dropdown-menu {
+  background-color: #333;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  min-width: 150px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 1200;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-item {
+  color: inherit;
+  text-decoration: none;
+  padding: 10px 15px;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* Desktop Search & Dark Mode Toggle */
+.search-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.search-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.dark-mode-toggle {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Desktop Styles (min-width: 768px) */
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Hide mobile-specific elements */
+  .navbar-burger,
+  .navbar-extra,
+  .mobile-search-form {
+    display: none;
+  }
+  
+  /* Navbar Menu becomes inline */
+  .navbar-menu {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    width: auto;
+    align-items: center;
+    padding: 0;
+    margin-top: 0;
+  }
+  
+  .navbar-start {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+  }
+  
+  .navbar-item {
+    width: auto;
+    text-align: left;
+  }
+  
+  .dropdown-menu {
+    top: 100%;
+    left: 0;
+  }
+  
+  .navbar-end {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+  }
+  
+  .search-input {
+    width: 200px;
+  }
+}

@@ -1,0 +1,39 @@
+/* Admin Page Styles */
+.admin-article-page {
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Container for the main admin content */
+  .admin-article-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+  /* Page heading */
+  .admin-article-page h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .admin-article-page {
+      padding: 10px;
+    }
+    .admin-article-page .container {
+      padding: 15px;
+    }
+    .admin-article-page h1 {
+      font-size: 1.5rem;
+    }
+  }
+  

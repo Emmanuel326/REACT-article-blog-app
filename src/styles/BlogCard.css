@@ -1,0 +1,147 @@
+/* ====== Blog Card Grid ====== */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 16px;
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ====== Blog Card Styling ====== */
+.blog-card {
+  height: 400px; /* Fixed height for desktop uniformity */
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Hover Effect */
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ====== Card Internal Layout ====== */
+
+/* Image Section – 40% of card height */
+.blog-card-image {
+  height: 40%;
+  width: 100%;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Full image is visible with letterboxing if needed */
+}
+
+/* Content Section – 45% of card height */
+.blog-card-content {
+  height: 45%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.blog-card-content .title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 4px;
+  /* Allow the title to wrap without truncation */
+  white-space: normal;
+}
+
+.blog-card-content .content {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 4px;
+  /* Remove text clamping on desktop if you wish or keep clamping (currently commented out) */
+  overflow: hidden;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 3; */
+  -webkit-box-orient: vertical;
+}
+
+/* Footer Section – 15% of card height */
+.blog-card-footer {
+  height: 15%;
+  padding: 6px 8px;
+  background-color: #f8f9fa;
+  text-align: right;
+  font-size: 0.8rem;
+  color: #007bff;
+  font-weight: bold;
+  border-top: 1px solid #ddd;
+}
+
+.blog-card-footer:hover {
+  text-decoration: underline;
+}
+
+/* ====== Pagination (if applicable) ====== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  margin: 0 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 768px) {
+  .blog-container {
+    grid-template-columns: 1fr; /* 1 column for small screens */
+  }
+  
+  /* Allow the blog card to auto-size its height on small screens */
+  .blog-card {
+    height: auto;
+  }
+  
+  /* Let the content section expand naturally */
+  .blog-card-content {
+    height: auto;
+  }
+  
+  /* Remove any overflow/clamping for the excerpt */
+  .blog-card-content .content {
+    overflow: visible;
+    display: block;
+    white-space: normal;
+  }
+  
+  /* Footer auto-adjusts */
+  .blog-card-footer {
+    height: auto;
+    padding: 10px 8px;
+  }
+}

@@ -1,0 +1,55 @@
+/* ====== Global Variables & Reset ====== */
+:root {
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --background-color: #f9f9f9;
+  --primary-color: #007bff;
+  --max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ====== Base Styles - Mobile First ====== */
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/* ====== Global Container ====== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ====== Featured Blogs Wrapper ====== */
+.featured-blogs {
+  width: 100%;
+  max-width: none;  /* No restrictive max-width */
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* ====== Blogs Container: Flexible Grid ====== */
+.blogs-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ====== Tablet and Larger Screens ====== */
+@media (min-width: 768px) {
+  .blogs-container {
+    gap: 24px;
+  }
+}

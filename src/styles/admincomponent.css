@@ -1,0 +1,190 @@
+/* =============================
+   Admin Article Editor Component Styles
+   ============================= */
+   .admin-article-editor {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  .admin-article-editor:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+  
+  /* Form styling */
+  .admin-article-editor form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Label styling */
+  .admin-article-editor label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Input, textarea, select styling */
+  .admin-article-editor input[type="text"],
+  .admin-article-editor textarea,
+  .admin-article-editor select {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  .admin-article-editor input[type="text"]:focus,
+  .admin-article-editor textarea:focus,
+  .admin-article-editor select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* Textarea specifics */
+  .admin-article-editor textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  /* Styling for the React Quill editor */
+  .admin-article-editor .ql-container {
+    height: 250px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+  }
+  
+  /* =============================
+     CKEditor Custom Styles
+     ============================= */
+  /* Style the editable area of CKEditor */
+  .ck-editor__editable_inline {
+    min-height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    background: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  .ck-editor__editable_inline:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  /* Style the CKEditor toolbar */
+  .ck-toolbar {
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    background: #f7f7f7;
+    padding: 5px;
+  }
+  /* Add margin to the CKEditor instance */
+  .ck-editor {
+    margin-bottom: 15px;
+  }
+  
+  /* =============================
+     Dropzone Styling
+     ============================= */
+  .dropzone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #fafafa, #f0f0f0);
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  .dropzone:hover {
+    background: linear-gradient(135deg, #f7f7f7, #e9e9e9);
+    border-color: #007bff;
+  }
+  .dropzone p {
+    margin: 0;
+  }
+  
+  /* =============================
+     Submit Button Styling
+     ============================= */
+  .admin-article-editor button[type="submit"] {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .admin-article-editor button[type="submit"]:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80);
+    transform: translateY(-2px);
+  }
+  
+  /* =============================
+     Responsive Adjustments
+     ============================= */
+  /* Mobile first (default) */
+  @media (max-width: 768px) {
+    .admin-article-editor {
+      padding: 15px;
+    }
+    .admin-article-editor input[type="text"],
+    .admin-article-editor textarea,
+    .admin-article-editor select {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+    .admin-article-editor button[type="submit"] {
+      padding: 12px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Medium screens */
+  @media (min-width: 769px) and (max-width: 1200px) {
+    .admin-article-editor {
+      padding: 25px;
+      border-radius: 8px;
+    }
+    .admin-article-editor input[type="text"],
+    .admin-article-editor textarea,
+    .admin-article-editor select {
+      font-size: 1rem;
+      padding: 12px;
+    }
+    .admin-article-editor button[type="submit"] {
+      padding: 16px;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Large screens */
+  @media (min-width: 1201px) {
+    .admin-article-editor {
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    .admin-article-editor input[type="text"],
+    .admin-article-editor textarea,
+    .admin-article-editor select {
+      font-size: 1.1rem;
+      padding: 14px;
+    }
+    .admin-article-editor button[type="submit"] {
+      padding: 18px;
+      font-size: 1.1rem;
+    }
+  }
+  

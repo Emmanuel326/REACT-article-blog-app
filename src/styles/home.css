@@ -1,0 +1,42 @@
+/* ====== Home Page Styles ====== */
+
+/* Hero Section */
+.hero {
+  /*background-image: url("../assets/blog-hero.jpg"); /* Optional: Custom background */
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0;
+}
+
+.hero-body {
+  padding: 80px 20px;
+}
+
+.hero .title {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero .subtitle {
+  color: #f8f8f8;
+  font-size: 1.3rem;
+}
+
+/* Featured Blogs Section */
+.featured-title {
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero .title {
+    font-size: 2rem;
+  }
+  
+  .hero .subtitle {
+    font-size: 1rem;
+  }
+}

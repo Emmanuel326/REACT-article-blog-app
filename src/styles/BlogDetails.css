@@ -1,0 +1,75 @@
+/* BlogDetails.css */
+
+/* Base Blog Details Section (mobile-first) */
+.blog-details {
+  padding: 1.5rem 1rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;  /* Center the content */
+}
+
+/* Constrain the container's width and center it */
+.blog-details .container {
+  max-width: 500px;   /* Reduced from 600px */
+  width: 90%;         /* Ensure flexibility */
+  margin: 0 auto;
+  padding: 0 1rem;
+  background: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
+  border-radius: 10px;
+}
+
+/* Style the article content */
+.blog-details .content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 1024px) {
+  .blog-details {
+    padding: 2rem 1rem;
+  }
+
+  .blog-details .container {
+    max-width: 500px;   /* Keeping a narrow width for readability */
+    padding: 1.5rem 2rem; /* Add internal spacing */
+  }
+}
+
+/* Extra adjustments for ultra-wide screens */
+@media (min-width: 1440px) {
+  .blog-details .container {
+    max-width: 450px;  /* Even narrower on big screens */
+  }
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  .blog-details {
+    padding: 1rem;
+  }
+
+  .blog-details .container {
+    max-width: 95%;  /* Allow slight flexibility */
+    padding: 1rem;
+  }
+}
+
+
+
+.blog-details .title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Make sure it looks good on larger screens */
+@media (min-width: 1024px) {
+  .blog-details .title {
+    font-size: 2.2rem;
+  }
+}

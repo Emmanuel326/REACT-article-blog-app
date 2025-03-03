@@ -1,0 +1,110 @@
+
+/* ====== Latest Blogs Section ====== */
+.latest-blogs-section {
+  padding: 40px 16px;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* ====== Blog Grid Layout (2 Columns, 5 Rows) ====== */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(5, auto); /* 5 rows */
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch; /* Ensures cards stretch equally */
+}
+
+.blog-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* ====== Fix Card Sizing ====== */
+.blog-card {
+  width: 100%;
+  max-width: 500px;
+  min-height: 350px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ====== Fix Title Readability ====== */
+.blog-card-content .title {
+  color: #222;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ====== Pagination Styles ====== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.pagination-link.is-current {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 1.1rem;
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 column on small screens */
+    grid-template-rows: auto;
+  }
+}

@@ -1,0 +1,46 @@
+/* Category Page Styles */
+.category {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.category .container {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category .title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.category .columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category .column {
+  padding: 10px;
+}
+
+.category .no-blogs {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .category .title {
+    font-size: 1.8rem;
+  }
+}

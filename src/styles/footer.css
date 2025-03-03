@@ -1,0 +1,101 @@
+/* ====== Footer Styles ====== */
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Footer Content Layout */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+/* Individual Footer Sections */
+.footer-section {
+  text-align: center;
+  max-width: 400px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* Footer Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-links li a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.6rem;
+  transition: transform 0.2s ease, color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+  transform: scale(1.1);
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 12px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* ====== Responsive Design ====== */
+
+/* Tablet and Larger Screens */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .footer-section {
+    max-width: none;
+  }
+
+  /* Ensures equal spacing for footer sections */
+  .footer-section {
+    flex: 1;
+  }
+}

@@ -1,13 +1,140 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ==========================
+   🌍 Global Styles
+   ========================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #f4f6f9;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================
+   🏗️ Layout & Container
+   ========================== */
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* ==========================
+   🔗 Links
+   ========================== */
+a {
+    color: #4accec;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #baee2c;
+    text-decoration: underline;
+}
+
+/* ==========================
+   🎨 Buttons
+   ========================== */
+button, .button {
+    background-color: #007bff;
+    color: rgb(49, 228, 198);
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    font-weight: 600;
+}
+
+button:hover, .button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button:active, .button:active {
+    transform: scale(1);
+}
+
+/* ==========================
+   🖼️ Images & Media
+   ========================== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* ==========================
+   🎭 Utility Classes
+   ========================== */
+.text-center { text-align: center; }
+.text-bold { font-weight: bold; }
+.text-muted { color: #6c757d; }
+
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+
+/* ==========================
+   📱 Responsive Grid
+   ========================== */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.col {
+    flex: 1;
+    padding: 8px;
+}
+
+/* ==========================
+   ⚡ Footer
+   ========================== */
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+    border-radius: 8px 8px 0 0;
+}
+
+/* ==========================
+   📏 Responsive Styles
+   ========================== */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
 }
