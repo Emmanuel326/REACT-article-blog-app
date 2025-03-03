@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const API_URL = "https://your-backend-app-name.onrender.com/api";
+const API_URL = 'https://django-backend-94gk.onrender.com/api/articles/';
 
 // Utility function to handle API requests
 const fetchData = async (endpoint, params = {}) => {
