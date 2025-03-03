@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/api"; // Ensure this matches your Django backend URL
+
+const API_URL = "https://your-backend-app-name.onrender.com/api";
 
 // Utility function to handle API requests
 const fetchData = async (endpoint, params = {}) => {
