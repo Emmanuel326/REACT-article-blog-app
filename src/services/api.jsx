@@ -1,12 +1,14 @@
 import axios from "axios";
 
 
-const API_URL = 'https://django-backend-94gk.onrender.com/api/articles/';
+const API_URL = process.env.REACT_APP_API_URL || 'https://django-backend-94gk.onrender.com/api/';
+
 
 // Utility function to handle API requests
 const fetchData = async (endpoint, params = {}) => {
   try {
-    const url = `${API_URL}/${endpoint}/`;
+    // Removed extra slash between API_URL and endpoint
+    const url = `${API_URL}${endpoint}/`;
     const response = await axios.get(url, { params });
     if (!response.data) {
       throw new Error("Invalid data structure received");
@@ -40,7 +42,7 @@ export const fetchCategories = async () => {
 // Fetch all articles (non-paginated, for admin usage)
 export const fetchAllArticles = async () => {
   try {
-    const response = await axios.get(`${API_URL}/articles/`, { params: { limit: 1000 } });
+    const response = await axios.get(`${API_URL}articles/`, { params: { limit: 1000 } });
     // Return data.results if present (paginated response), otherwise the data itself.
     return response.data.results || response.data;
   } catch (error) {
@@ -51,7 +53,7 @@ export const fetchAllArticles = async () => {
 // Create an article (POST request)
 export const createArticle = async (articleData) => {
   try {
-    const url = `${API_URL}/articles/`;
+    const url = `${API_URL}articles/`;
     const response = await axios.post(url, articleData);
     return response.data;
   } catch (error) {
