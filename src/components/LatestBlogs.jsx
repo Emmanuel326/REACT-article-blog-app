@@ -1,26 +1,21 @@
 import { useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import BlogCard from "./BlogCard";
+import { fetchBlogs } from "../services/api"; // Import the API service function
 import "../styles/latestBlogs.css"; // Custom CSS
-
-// Function to fetch blogs
-const fetchBlogs = async ({ queryKey }) => {
-  const [, page] = queryKey;
-  const response = await fetch(`http://localhost:8000/api/articles/?page=${page}`);
-  
-  if (!response.ok) throw new Error("Failed to fetch blogs");
-  
-  return response.json();
-};
 
 const LatestBlogs = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const page = Number(searchParams.get("page")) || 1; // Get current page from URL
 
-  const { data, isLoading, isError, error } = useQuery(["blogs", page], fetchBlogs, {
-    keepPreviousData: true, // Prevents flickering when switching pages
-  });
+  // Use the fetchBlogs function from your API service
+  const { data, isLoading, isError, error } = useQuery(
+    ["blogs", page],
+    () => fetchBlogs({ page }),
+    { keepPreviousData: true } // Prevents flickering when switching pages
+  );
 
+  // Calculate total pages (assuming data.count holds the total number of articles)
   const totalPages = data ? Math.ceil(data.count / 10) : 1;
 
   const handlePageChange = (newPage) => {
@@ -49,9 +44,9 @@ const LatestBlogs = () => {
 
         {/* Pagination Controls */}
         <nav className="pagination">
-          <button 
-            className="pagination-previous" 
-            disabled={page <= 1} 
+          <button
+            className="pagination-previous"
+            disabled={page <= 1}
             onClick={() => handlePageChange(page - 1)}
           >
             ← Previous
@@ -65,9 +60,9 @@ const LatestBlogs = () => {
             </li>
           </ul>
 
-          <button 
-            className="pagination-next" 
-            disabled={page >= totalPages} 
+          <button
+            className="pagination-next"
+            disabled={page >= totalPages}
             onClick={() => handlePageChange(page + 1)}
           >
             Next →
