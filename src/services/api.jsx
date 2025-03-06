@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const API_URL = process.env.REACT_APP_API_URL || 'https://django-backend-94gk.onrender.com/api/';
+const API_URL = process.env.REACT_APP_API_URL || 'https://api.fynanceguide.site/';
 
 
 // Utility function to handle API requests
