@@ -3,6 +3,7 @@ import axios from "axios";
 
 const API_URL = process.env.REACT_APP_API_URL || 'https://api.fynanceguide.site/';
 
+console.log(process.env.REACT_APP_API_URL);
 
 
 // Utility function to handle API requests
