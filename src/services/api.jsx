@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL || 'https://api.fynanceguide.site/api/';
+const API_URL = process.env.REACT_APP_API_URL || 'https://api.fynanceguide.site/api';
 
 console.log("API Base URL:", API_URL); // Log API base URL
 
